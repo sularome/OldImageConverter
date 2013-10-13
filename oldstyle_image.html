@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title></title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Life+Savers:400,700' rel='stylesheet' type='text/css'>
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body class="bs-docs-home">
+		<h1><span class="glyphicon glyphicon-th"></span> Old paper image converter</h1>
+		<div class="fields">
+			<div id="result"></div>
+			<div class="file" id="drop_zone">
+				<label for="image_input">Add image <span class="nom">(Nom, nom, nom..)</span></label>
+				<input type="file" id="image_input" />
+				
+			</div>
+			<div class="field-wrap">
+				<div class="field">
+					<label for="shape_type">Segment size in px</label>
+					<input type="number" id="image_slider" min="3" max="100" value="10" class="form-control" />
+				</div>
+				<div class="field">
+					<label for="shape_type">Segment base color</label>
+					<input type="color" id="image_color" class="form-control" value="#9AD2CB" />
+				</div>
+				<div class="field">
+					<label for="shape_type">Segment shape</label>
+					<select name="" id="shape_type" class="form-control">
+						<option value="circle" selected>Circle</option>
+						<option value="rectangle">Rectangle</option>
+						<option value="rounded rectangle">Rounded rectangle</option>
+						<option value="diamond">Diamond</option>
+					</select>
+				</div>
+				<div class="field">
+					<label for="color_type">Segment colorisation</label>
+					<select name="" id="color_type" class="form-control">
+						<option value="color">Color</option>
+						<option value="tint" selected>Tint</option>
+						<option value="random_tint">Random Tint</option>
+						<option value="shade">Shade</option>
+						<option value="random_shade">Random Shade</option>
+						<option value="random">Random</option>
+					</select>
+				</div>
+			</div>
+			<div id="progress-bar-wrap"></div>
+		</div>
+		<div id="canvas_screen_wrap" class="canvas_screen_wrap">
+			<div class="export-field">
+				<button type="submit" id="export" class="btn btn-primary btn-lg "><span class="glyphicon glyphicon-floppy-disk"></span> Export</button>
+			</div>
+		</div>
+			
+		<script src="js/jquery-1.9.0.min.js"></script>
+		<script type="text/javascript"> 
+			jQuery.noConflict();
+		</script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/Blob.js"></script>
+		<script src="js/canvas-toBlob.js"></script>
+		<script src="js/FileSaver.js"></script>
+		<script src="js/canvas_shapes.js"></script>
+		<script src="js/ProgressBar.js"></script>
+		<script src="js/OldImageConverter.js"></script>
+
+		<script type="text/javascript"> 
+		(function ($) { "use strict";
+			$(function(){
+				var oldImageConverter = new OldImageConverter();
+				var progressBar = new ProgressBar();
+				oldImageConverter.on("updateProgress").subscribe($.proxy(progressBar.update, progressBar));
+			});
+		})(jQuery);
+		</script>
+	</body>
+</html>

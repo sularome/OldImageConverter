@@ -1,0 +1,114 @@
+body{
+	background:#F6F6F1 url(../img/dots_pattern.png) 50% 0 repeat-x;
+	text-align:center;
+}
+h1{
+	margin:0.5em 0 0;
+	font: bold 80px/1.4 'Life Savers', "Comica sans", serif;
+	vertical-align:middle;
+}
+h1 .glyphicon{
+	color:#E45A63;
+} 
+.fields{
+	padding:20px;
+}
+ 
+.fields .field{
+	display:inline-block;
+	vertical-align: top;
+	width:200px;
+	margin:20px;
+}
+.fields .field input.error{
+	background-color: #F8D5D8;
+	border: 1px solid #E45A63;
+}
+.fields .field label{
+	display:block;
+	font: bold 20px 'Life Savers', "Comica sans", serif;
+}
+#result{
+	margin:0;
+}
+#image_slider_value{
+	margin-left:20px;
+}
+
+.export-field{
+	padding:1em;
+	clear:both;
+	text-align:center;
+}
+#progress-bar-wrap{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+.progress{
+	width:100%;
+	height:20px;
+	clear:both;
+	margin-top:0;
+	margin-bottom:0;
+	border-radius: 0;
+}
+.progress.completed{
+	overflow:hidden;
+	opacity:0;
+}
+.progress-bar{
+	-webkit-transition: all 0.3s ease-out; 
+	-moz-transition: all 0.3s ease-out; 
+	-o-transition: all 0.3s ease-out; 
+	transition: all 0.3s ease-out; 
+}
+.result{
+	clear:both;
+	text-align:center;
+}
+.file{
+	min-height:130px;
+	clear:both;
+	border-radius:20px;
+	border:4px dashed #E45A63;
+	padding:1.5em;
+	text-align:center;
+	background:#fff;
+	color:#7DA09B;
+}
+.file.over{
+	border-color:#993944;
+	background:#E17E76;
+	color:#9E8F9B;
+}
+.file.over input{
+	display:none;
+}
+.file label{
+	display:block;
+	font: bold 40px 'Life Savers', "Comica sans", serif;
+}
+.file input{
+	margin:0 auto;
+}
+.file .nom{
+	display:none;
+}
+.file.over .nom{
+	display:inline;
+}
+.canvas_screen_wrap {
+	position:relative;
+}
+.canvas_screen_wrap .export-field{
+	width:100%;
+	display:none;
+	position:absolute;
+	left:0;
+	top:20px;
+}
+.canvas_screen_wrap:hover .export-field{
+	display: block;
+}
