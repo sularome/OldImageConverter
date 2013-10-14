@@ -112,3 +112,13 @@ h1 .glyphicon{
 .canvas_screen_wrap:hover .export-field{
 	display: block;
 }
+.info-bar{
+	background: #FFF;
+	border-bottom: 3px dashed #E45A63;
+}
+.info-bar a{
+	display:inline-block;
+	color: #3F9B8F;
+	padding:4px 0;
+	margin:0 15px;
+}
